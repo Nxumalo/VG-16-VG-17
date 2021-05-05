@@ -1,4 +1,4 @@
-public class castexpression{
+public class Castexpression{
  public static void main(String [] args){
   System.out.println(“(int)(7.9) = “ +(int)(7.9));
   System.out.println(“(int)(3.3) = “ +(int)(3.3));
