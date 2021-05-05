@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class syntaxFormat{
+public class SyntaxFormat{
   
   static Scanner console = new Scanner(System.in);
   
