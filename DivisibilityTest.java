@@ -33,6 +33,6 @@ public class DivisibilityTest{
     if(sum % 9 == 0)
        System.out.println(temp + “ is divisible by 9”);
     else 
-       System.out.println(temp + “ is not divisible by 9);
+       System.out.println(temp + “ is not divisible by 9”);
  }
 }
