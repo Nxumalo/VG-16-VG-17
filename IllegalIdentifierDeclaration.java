@@ -6,6 +6,6 @@ public static void IllegalIdentifierDeclaration(){
   
   {
     double x;   //illegal declaration, x is already declared
-    ...
+  //  ...
   }
 }
