@@ -13,5 +13,25 @@ public class ScoreRules{
     //... 
     
   }
+  public static void one(int x, char y){
+    
+    //...
+  }
   
+  public static int w;
+  
+  public static void two(int one, int z){
+    
+    char ch;
+    int a;
+    
+    // block three
+    {
+      int x = 12;
+      
+      //...
+      
+    }// end block three
+//...
+  } 
 }
