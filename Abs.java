@@ -1,4 +1,4 @@
-public static int abs(int number){
+public static int Abs(int number){
   
   if (number < 0)
     number = -number;
