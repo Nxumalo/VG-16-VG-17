@@ -64,10 +64,29 @@ public class CandyMachine extends JFrame{
     pane.add(exitB);    // add exit button to pane
     
     setVisible(true);   // show 
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
     
+  }
+  
+  private ButtonHandler implements ActionListener{
+    
+    public void actionPerformed (ActionEvent e){
+      
+      if(e.getActionCommand().equals("EXIT"))
+        System.exit(0);
+      else if (e.getActionCommand().equals("Candy"))
+        sellProduct(candy,"Candy");
+      else if (e.getActionCommand().equals("Chips"))
+        sellPro
+                                           
+      
+    }
+    
+    
+  }
     
     
     
                          
-  }
+  
 }
