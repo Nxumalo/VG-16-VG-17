@@ -63,12 +63,12 @@ public class CandyMachine extends JFrame{
     pane.add(cookiesB); // and cookies button to pane
     pane.add(exitB);    // add exit button to pane
     
-    setVisible(true);   // show 
+    setVisible(true);   // show window and its contents
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     
   }
-  
-  private ButtonHandler implements ActionListener{
+  // class to handle the button events
+  private class ButtonHandler implements ActionListener{
     
     public void actionPerformed (ActionEvent e){
       
@@ -77,16 +77,58 @@ public class CandyMachine extends JFrame{
       else if (e.getActionCommand().equals("Candy"))
         sellProduct(candy,"Candy");
       else if (e.getActionCommand().equals("Chips"))
-        sellPro
-                                           
-      
+        sellProduct(chips,"Chips");
+      else if (e.getActionCommand().equals("Gum"))
+        sellProduct(gum,"Gum");
+      else if (e.getActionCommand().equals("Cookies"))
+        sellProduct(cookies,"Cookies");
     }
+  }
+  // Sell products
+  
+  private void sellProduct(Dispenser product,String productName){
+   
+    int coinsInserted = 0;
+    int price, coinsRequired;
+    String str;
+    
+    if(product.getCount() > 0){
+     
+      price = product.getProductCost();
+      coinsRequired = price - coinsInserted;
+      
+      while(coinsRequired > 0){
+        
+        str = JOptionPane.showInputDialog("To buy "+ productName 
+                                          + " please insert "
+                                          + coinsRequired + "cents");
+        coinsInserted = coinsInserted + Integer.parseInt(str);
+        coinsRequired = price - coinsInserted;
+      }
+      
+      cashRegister.acceptAmount(coinsInserted);
+      product.makeSale();
+      
+      JOptionPane.showMessageDialog(null,"Please pick up your "
+                                    + productName + " and enjoy ", 
+                                    "Thank you, Come again!",
+                                    JOptionPane.PLAIN_MESSAGE);
+    }
+    //  dispenser is  empty
+    else
+        JOptionPane.showMessageDialog(null,"Sorry " + productName +
+                                      " is sold out\n" + 
+                                      " Make another selection",
+                                      " Thank you, Come again!",
+                                      JOptionPane.PLAIN_MESSAGE);
     
     
   }
     
+  public static void main (String [] args){
     
+    CandyMachine candyshop = new CandyMachine();
     
-                         
-  
+ 
+  } 
 }
