@@ -27,6 +27,25 @@ public class LargestNumber{
                       + "        parameter list returns the value "
                       + largest());
                       
-    public static double largest( double ... numList){                   
+    public static double largest( double ... numList){  
+    
+      double max;
+      int index;
+      
+      if(numList.length != 0){
+       
+        max = numList[0];
+        
+        for(index = 1; index < numList.length; index++){
+         
+          if(max < numList [index])
+            max = numList [index];
+        }
+        
+        return max;
+       
+      }
+        return 0.0;
+    }
 
 }
