@@ -27,6 +27,6 @@ public class LargestNumber{
                       + "        parameter list returns the value "
                       + largest());
                       
-    public                   
+    public static double largest( double ... numList){                   
 
 }
