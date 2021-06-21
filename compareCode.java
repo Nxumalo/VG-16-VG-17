@@ -21,8 +21,19 @@ public static void compareCode(Scanner inFile, PrintWriter outP,
    
     digit = inFile.nextInt();
     
-    outP.printf("%5d %15d %n"
+    outP.printf("%5d %15d %n", list[count],digit);
     
+    if(digit != list[count]){
+     
+      outP.println(" corresponding code digits are not the same ");
+      codeOk = false;    
+    }
+    else
+        outP.println();
     
+    if(codeOk)
+       outP.println("Message transmitted OK.");
+    else
+       outP.println("Error in transmission. Retransmitt!!");
   }
 }
